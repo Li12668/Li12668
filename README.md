@@ -102,17 +102,23 @@ graph LR
 
 学习算法竞赛 - 待开始 🔮
 
-📫 联系通道
-<div align="center"><!-- 社交徽章 -->
-https://img.shields.io/badge/GitHub-Li12668-181717?style=for-the-badge&logo=github
-https://img.shields.io/badge/%E9%82%AE%E7%AE%B1-%E8%81%94%E7%B3%BB%E6%88%91-D14836?style=for-the-badge&logo=gmail
-https://img.shields.io/badge/%E5%8D%9A%E5%AE%A2-%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB-FF5722?style=for-the-badge&logo=blogger
+## 📫 联系通道
 
+<div align="center">
 
-<!-- 动态分割线 --><img src="https://raw.githubusercontent.com/trinib/trinib/main/.images/footer.svg" width="100%">
-⭐ 感谢访问，期待与你交流编程的乐趣！ ⭐
+<!-- 社交徽章 -->
+[![GitHub](https://img.shields.io/badge/GitHub-Li12668-181717?style=for-the-badge&logo=github)](https://github.com/Li12668)
+[![Email](https://img.shields.io/badge/%E9%82%AE%E7%AE%B1-%E8%81%94%E7%B3%BB%E6%88%91-D14836?style=for-the-badge&logo=gmail)](mailto:2137500065@qq.com)
+[![Blog](https://img.shields.io/badge/%E5%8D%9A%E5%AE%A2-%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB-FF5722?style=for-the-badge&logo=blogger)](#)
+
+<br>
+
+⭐ **感谢访问，期待与你交流编程的乐趣！** ⭐
+
+<!-- 动态分割线 -->
+<img src="https://raw.githubusercontent.com/trinib/trinib/main/.images/footer.svg" width="100%">
 
 <!-- 动态装饰 -->
-https://raw.githubusercontent.com/Li12668/Li12668/output/github-contribution-grid-snake.svg
+![Snake Animation](https://raw.githubusercontent.com/Li12668/Li12668/output/github-contribution-grid-snake.svg)
 
-</div> ```
+</div>
