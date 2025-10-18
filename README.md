@@ -116,7 +116,7 @@ graph LR
 ⭐ **感谢访问，期待与你交流编程的乐趣！** ⭐
 
 <!-- 动态分割线 -->
-<img src="https://raw.githubusercontent.com/trinib/trinib/main/.images/footer.svg" width="100%">
+<div style="width:100%;height:2px;background:linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);margin:20px 0;"></div>
 
 <!-- 动态装饰 -->
 ![Snake Animation](https://raw.githubusercontent.com/Li12668/Li12668/output/github-contribution-grid-snake.svg)
