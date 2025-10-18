@@ -102,6 +102,18 @@ graph LR
 
 学习算法竞赛 - 待开始 🔮
 
+## 🏆 成就系统
+
+<div align="center">
+
+### 🥇 当前等级
+![Level](https://github-profile-trophy.vercel.app/?username=Li12668&theme=onedark&no-bg=true&row=1)
+
+### 🎮 详细成就
+![Achievements](https://github-profile-trophy.vercel.app/?username=Li12668&theme=nord&no-frame=true&row=2&column=4)
+
+</div>
+
 ## 📫 联系通道
 
 <div align="center">
