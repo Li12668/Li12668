@@ -1,136 +1,116 @@
-<!-- 动态横幅 -->
-<div align="center">
-  
-![Header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Hi%20There%20👋&fontSize=50&fontAlignY=35&desc=Li12668%20-%20Yanshan%20University&descSize=20&descAlignY=55&animation=fadeIn)
+# 智能工作流自动化助手
 
-</div>
+一个基于Web的智能工作流自动化助手，使用智谱AI的GLM-4-Flash模型来解析自然语言需求，生成工作流程步骤和API调用建议。
 
-<!-- 个人介绍 -->
-<div align="center">
+## 功能特性
 
-# 🚀 Li12668
+- **自然语言处理**：使用智谱AI的GLM-4-Flash模型解析自然语言需求
+- **工作流生成**：将自然语言需求分解为具体的工作流程步骤
+- **API调用建议**：自动生成需要调用的API及其用途
+- **工作流执行**：模拟执行工作流程步骤，提供可视化的执行状态
+- **历史记录管理**：保存工作流历史记录，支持编辑和删除
+- **分类管理**：支持对工作流进行分类（个人、工作、其他）
+- **用户认证**：基于localStorage的用户登录和注册功能
+- **API密钥管理**：在界面上安全设置和管理智谱AI API密钥
+- **响应式设计**：适配不同屏幕尺寸的设备
 
-🎓 **燕山大学 · 软件工程大一** | 💻 **C/C++ 开发者** | 🌱 **开源探索者**
+## 安装步骤
 
-[![GitHub followers](https://img.shields.io/github/followers/Li12668?style=social)](https://github.com/Li12668)
-[![Visitors](https://komarev.com/ghpvc/?username=Li12668&color=blueviolet)](https://github.com/Li12668)
+1. **克隆项目**
+   ```bash
+   git clone <repository-url>
+   cd intelligent-workflow-assistant
+   ```
 
-</div>
+2. **安装依赖**
+   本项目是纯前端项目，不需要安装依赖，直接打开 `index.html` 文件即可运行。
 
-## 🛠️ 技术栈 & 工具
+## 使用方法
 
-### 💻 **编程语言**
-![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+1. **打开应用**
+   直接在浏览器中打开 `index.html` 文件。
 
-### 🔧 **开发环境**
-![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visual-studio&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Dev C++](https://img.shields.io/badge/Dev%20C++-004482?style=for-the-badge&logo=c&logoColor=white)
+2. **注册/登录**
+   - 点击右上角的"注册"按钮创建账号
+   - 或者使用已有账号登录
 
-## 📊 GitHub 数据看板
+3. **设置API密钥**
+   - 登录后，点击右上角的"API密钥设置"按钮
+   - 输入您的智谱AI API密钥
+   - 选择要使用的模型（GLM-4-Flash或GLM-4）
+   - 点击"保存设置"按钮
 
-<div align="center">
+4. **生成工作流**
+   - 在"描述您的工作流程"文本框中输入自然语言描述
+   - 或者点击示例工作流程卡片快速填充
+   - 点击"生成工作流"按钮
+   - 系统会调用智谱AI API生成工作流程步骤和API调用建议
 
-<!-- GitHub统计卡片 -->
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Li12668&show_icons=true&theme=radical&hide_border=true&bg_color=30,0d1117,161b22)
-![语言统计](https://github-readme-stats.vercel.app/api/top-langs/?username=Li12668&layout=compact&theme=radical&hide_border=true)
+5. **执行工作流**
+   - 生成工作流后，点击"执行工作流"按钮
+   - 系统会模拟执行工作流程步骤，显示执行状态
 
-<!-- GitHub活动图表 -->
-![GitHub活动图](https://github-readme-activity-graph.vercel.app/graph?username=Li12668&theme=react-dark&bg_color=0d1117&hide_border=true&area=true)
+6. **管理历史记录**
+   - 在"工作流历史" section查看历史记录
+   - 使用分类过滤器筛选不同类别的工作流
+   - 点击"编辑"按钮将历史工作流加载到编辑区
+   - 点击"删除"按钮删除历史记录
 
-</div>
+## 部署指南
 
-## 🎓 学术轨迹
+### 本地部署
+1. 直接在浏览器中打开 `index.html` 文件
 
-<details>
-<summary>📚 点击查看我的学习历程</summary>
+### GitHub Pages部署
+1. **创建GitHub仓库**
+   - 在GitHub上创建一个新的仓库
 
-### 🏫 燕山大学
-- **学院**: 信息科学与工程学院（软件学院）
-- **专业**: 软件工程
-- **年级**: 大一
-- **状态**: 🟢 在读
+2. **上传代码**
+   - 将项目文件上传到GitHub仓库
+   - 确保 `.gitignore` 文件已包含 `.env` 文件，避免API密钥被上传
 
-### 📖 当前课程
-| 课程 | 进度 | 状态 |
-|------|------|------|
-| C语言程序设计 | ███░░░░░░░ | 🚧 学习中 |
-| C++面向对象 | ███░░░░░░░ | 🚧 学习中 |
-| 数据结构 | █░░░░░░░░░ | 📚 即将开始 |
+3. **启用GitHub Pages**
+   - 进入仓库设置
+   - 找到"Pages"选项
+   - 选择"main"分支作为源
+   - 点击"Save"按钮
+   - 等待几分钟，GitHub Pages会生成访问URL
 
-</details>
+4. **设置API密钥**
+   - 部署后，用户需要在应用中手动设置API密钥
+   - API密钥会存储在用户的浏览器localStorage中，不会上传到GitHub
 
-## 🌟 特色项目
+## 技术栈
 
-<div align="center">
+- **前端**：HTML5, CSS3, JavaScript
+- **AI模型**：智谱AI GLM-4-Flash, GLM-4
+- **存储**：localStorage
+- **部署**：GitHub Pages
 
-### 🚧 项目正在建设中...
-![Building](https://img.shields.io/badge/🚧-项目筹备中-yellow?style=for-the-badge)
+## 注意事项
 
-</div>
+- **API密钥安全**：API密钥存储在浏览器的localStorage中，不会上传到服务器或GitHub
+- **模型选择**：GLM-4-Flash模型速度更快，成本更低，适合大多数场景
+- **历史记录**：历史记录存储在浏览器的localStorage中，清除浏览器数据会丢失历史记录
+- **用户数据**：用户账号信息存储在浏览器的localStorage中，清除浏览器数据会丢失用户账号
 
-<div align="center">
+## 示例工作流程
 
-<!-- 项目卡片 -->
-| 🎯 学习笔记 | 🔬 实验代码 | 💡 开源贡献 |
-|-------------|-------------|-------------|
-| C/C++ 知识库 | 课程实验 | 社区项目 |
-| 📝 持续更新 | 🔍 代码实践 | 🌱 计划中 |
+- **邮件处理**：每天早上检查邮件，提取重要信息并创建任务清单
+- **销售报告**：每周生成销售报告，分析数据并分享给团队
+- **文件备份**：每月自动备份重要文件到云存储
+- **订单处理**：当收到新订单时，自动更新库存并发送确认邮件
 
-</div>
+## 故障排除
 
-## 📈 成长路线
+- **API调用失败**：检查API密钥是否正确，网络连接是否正常
+- **工作流生成失败**：尝试使用更清晰的自然语言描述
+- **历史记录丢失**：检查浏览器是否清除了localStorage数据
 
-```mermaid
-graph LR
-    A[大一] --> B[大二]
-    B --> C[大三]
-    C --> D[大四]
-    A --> A1[编程基础]
-    B --> B1[数据结构]
-    C --> C1[系统设计]
-    D --> D1[项目实战]
-```
-🎯 近期目标
-完善GitHub主页 - 进行中 ⏳
+## 许可证
 
-建立C++学习仓库 - 计划中 📅
+本项目采用MIT许可证。
 
-参与开源项目 - 待开始 🔮
+## 贡献
 
-学习算法竞赛 - 待开始 🔮
-
-## 🏆 成就系统
-
-<div align="center">
-
-### 🥇 当前等级
-![Level](https://github-profile-trophy.vercel.app/?username=Li12668&theme=onedark&no-bg=true&row=1)
-
-### 🎮 详细成就
-![Achievements](https://github-profile-trophy.vercel.app/?username=Li12668&theme=nord&no-frame=true&row=2&column=4)
-
-</div>
-
-## 📫 联系通道
-
-<div align="center">
-
-<!-- 社交徽章 -->
-[![GitHub](https://img.shields.io/badge/GitHub-Li12668-181717?style=for-the-badge&logo=github)](https://github.com/Li12668)
-[![Email](https://img.shields.io/badge/%E9%82%AE%E7%AE%B1-%E8%81%94%E7%B3%BB%E6%88%91-D14836?style=for-the-badge&logo=gmail)](mailto:2137500065@qq.com)
-[![Blog](https://img.shields.io/badge/%E5%8D%9A%E5%AE%A2-%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB-FF5722?style=for-the-badge&logo=blogger)](#)
-
-<br>
-
-<!-- 波浪分割线 -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=80&section=footer" width="100%">
-
-⭐ **感谢访问，期待与你交流编程的乐趣！** ⭐
-
-<!-- 动态蛇动画 -->
-![Snake Animation](https://raw.githubusercontent.com/Li12668/Li12668/output/github-contribution-grid-snake.svg)
-
-</div>
+欢迎提交Issue和Pull Request来改进这个项目。

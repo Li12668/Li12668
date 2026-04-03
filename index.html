@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能工作流自动化助手</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-top">
+                <div class="logo">
+                    <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 10px;">
+                      <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#3494E6"/>
+                          <stop offset="100%" stop-color="#38F9D7"/>
+                        </linearGradient>
+                      </defs>
+                      <rect width="100" height="100" rx="20" fill="url(#logoGradient)"/>
+                      <path d="M22 20L38 20L38 30L28 30L28 45L38 45L38 55L22 55L22 45L32 45L32 30L22 30Z" fill="white"/>
+                      <path d="M22 60L38 60L38 70L28 70L28 85L38 85L38 90L22 90L22 85L32 85L32 70L22 70Z" fill="white"/>
+                      <circle cx="65" cy="35" r="12" fill="white"/>
+                      <path d="M65 65L68 58L75 58L71 52L78 46L71 40L75 34L68 34L65 40L62 34L55 34L59 40L54 46L59 52L55 58L62 58L65 65Z" fill="white"/>
+                    </svg>
+                    <h1>智能工作流自动化助手</h1>
+                    <p>从自然语言需求到应用生成</p>
+                </div>
+                <div class="auth-section">
+                    <div id="user-info" class="user-info" style="display: none;">
+                        <span id="username"></span>
+                        <a href="profile.html" style="margin: 0 10px; color: white; text-decoration: none; font-weight: 600;">个人中心</a>
+                        <button id="api-key-btn">API密钥设置</button>
+                        <button id="logout-btn">退出</button>
+                    </div>
+                    <div id="auth-buttons">
+                        <button id="login-btn">登录</button>
+                        <button id="register-btn">注册</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- 登录模态框 -->
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>登录</h3>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">邮箱</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">密码</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn-primary">登录</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 注册模态框 -->
+        <div id="register-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>注册</h3>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="register-name">用户名</label>
+                            <input type="text" id="register-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">邮箱</label>
+                            <input type="email" id="register-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">密码</label>
+                            <input type="password" id="register-password" required>
+                        </div>
+                        <button type="submit" class="btn-primary">注册</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- API密钥设置模态框 -->
+        <div id="api-key-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>API密钥设置</h3>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="api-key-form">
+                        <div class="form-group">
+                            <label for="api-key">智谱AI API密钥</label>
+                            <input type="text" id="api-key" placeholder="请输入您的API密钥" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="api-model">模型选择</label>
+                            <select id="api-model">
+                                <option value="glm-4-flash">GLM-4-Flash</option>
+                                <option value="glm-4">GLM-4</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary">保存设置</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <main class="main-content">
+            <section class="section input-section">
+                <h2>描述您的工作流程</h2>
+                <textarea id="workflow-input" placeholder="例如：每周五整理收到的发票，生成报表并邮件发送给财务"></textarea>
+                <div class="input-actions">
+                    <button id="generate-btn">生成工作流</button>
+                    <button id="clear-btn">清空</button>
+                </div>
+                
+                <div class="examples-section">
+                    <h3>示例工作流程</h3>
+                    <div class="examples-grid">
+                        <div class="example-card" data-example="每天早上9点检查邮件，提取重要信息并创建任务清单">
+                            <h4>邮件处理</h4>
+                            <p>每天早上检查邮件，提取重要信息并创建任务清单</p>
+                        </div>
+                        <div class="example-card" data-example="每周生成销售报告，分析数据并分享给团队">
+                            <h4>销售报告</h4>
+                            <p>每周生成销售报告，分析数据并分享给团队</p>
+                        </div>
+                        <div class="example-card" data-example="每月自动备份重要文件到云存储">
+                            <h4>文件备份</h4>
+                            <p>每月自动备份重要文件到云存储</p>
+                        </div>
+                        <div class="example-card" data-example="当收到新订单时，自动更新库存并发送确认邮件">
+                            <h4>订单处理</h4>
+                            <p>当收到新订单时，自动更新库存并发送确认邮件</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section result-section">
+                <h2>生成的工作流</h2>
+                <div id="workflow-result" class="result-container">
+                    <p class="placeholder">请输入工作流描述并点击生成按钮</p>
+                </div>
+                <div class="workflow-actions" style="margin-top: 20px;">
+                    <button id="execute-workflow-btn" class="btn-primary" style="display: none;">执行工作流</button>
+                </div>
+            </section>
+            
+            <section class="section api-section">
+                <h2>API调用</h2>
+                <div id="api-calls" class="api-container">
+                    <p class="placeholder">生成工作流后将显示API调用详情</p>
+                </div>
+            </section>
+            
+            <section class="section history-section">
+                <h2>工作流历史</h2>
+                <div class="history-actions" style="margin-bottom: 20px;">
+                    <select id="category-filter">
+                        <option value="all">所有分类</option>
+                        <option value="personal">个人</option>
+                        <option value="work">工作</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                <div id="workflow-history" class="history-container">
+                    <p class="placeholder">暂无工作流历史记录</p>
+                </div>
+            </section>
+            
+            <section class="section tech-section">
+                <h2>核心技术</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3>LLM</h3>
+                        <p>大语言模型，用于解析自然语言需求，理解用户意图</p>
+                    </div>
+                    <div class="tech-card">
+                        <h3>RPA</h3>
+                        <p>机器人流程自动化，执行重复性任务，提高效率</p>
+                    </div>
+                    <div class="tech-card">
+                        <h3>低代码平台</h3>
+                        <p>快速生成应用界面，无需编写大量代码</p>
+                    </div>
+                    <div class="tech-card">
+                        <h3>API集成</h3>
+                        <p>连接各种服务和系统，实现数据互通和功能扩展</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p>智能工作流自动化助手 © 2026</p>
+            <p>核心技术：LLM、RPA、低代码平台、API集成</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
